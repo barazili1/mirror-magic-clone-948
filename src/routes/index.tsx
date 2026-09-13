@@ -283,7 +283,10 @@ function Index() {
         <div className="rounded-[12px] bg-panel px-3 py-2">
           <div className="mb-1.5 flex items-center justify-between">
             <h1 className="text-[16px] font-extrabold">خدمات كاش</h1>
-            <Button variant="ghost" className="h-auto rounded-full bg-muted px-3 py-0.5 text-[12px]">
+            <Button
+              variant="ghost"
+              className="h-auto rounded-full bg-muted px-3 py-0.5 text-[12px]"
+            >
               عرض الكل
             </Button>
           </div>
