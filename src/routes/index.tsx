@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bell, ChevronLeft, Gift, Grid2X2, Smartphone, X } from "lucide-react";
+import { Bell, ChevronLeft, Gift, Grid2X2, Landmark, Smartphone, X } from "lucide-react";
 import { type SVGProps, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import offerAsset from "@/assets-government-offer.asset.json";
 
 // No head() here: the home route inherits title/description/og/twitter from
 // __root.tsx, and ships no og:image so serve-time hosting can inject the
@@ -92,11 +91,21 @@ function GovernmentIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 48 48" {...props}>
       <circle cx="24" cy="24" r="21" fill="var(--panel)" />
-      <circle cx="24" cy="24" r="18" fill="var(--service-badge)" />
-      <path d="m24 9 13 6-13 5-13-5 13-6Z" fill="var(--panel)" />
-      <path d="M15 21h18v11H15z" fill="var(--panel)" />
+      <circle
+        cx="24"
+        cy="24"
+        r="18"
+        fill="var(--service-badge)"
+        stroke="var(--service-emblem)"
+        strokeWidth="1.5"
+      />
+      <path d="M24 8.5 27 13h-6l3-4.5Z" fill="var(--service-emblem)" />
+      <path d="M12 18c3-5 7-8 12-8s9 3 12 8" stroke="var(--service-emblem)" strokeWidth="1.3" />
+      <path d="m24 13 11 5-11 4-11-4 11-5Z" fill="var(--panel)" />
+      <path d="M15 22h18v11H15z" fill="var(--panel))" />
       <path d="M12 34h24v4H12z" fill="var(--panel)" />
-      <path d="M19 21v11m10-11v11" stroke="var(--service-badge)" strokeWidth="2" />
+      <path d="M19 22v11m10-11v11" stroke="var(--service-badge)" strokeWidth="2" />
+      <path d="M14 39h20" stroke="var(--service-emblem)" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -302,11 +311,19 @@ function Index() {
               <span className="size-1.5 rounded-full bg-muted" />
             </div>
           </div>
-          <img
-            src={offerAsset.url}
-            alt="خدمات النيابة العامة في مكان واحد"
-            className="h-[139px] w-full rounded-[10px] object-cover"
-          />
+          <div className="relative h-[139px] overflow-hidden rounded-[10px] bg-alert px-5 py-4 text-primary-foreground">
+            <div className="absolute -bottom-10 -left-5 size-40 rotate-12 rounded-[28px] border-[14px] border-primary-foreground/15" />
+            <Landmark
+              className="absolute bottom-4 left-6 opacity-90"
+              size={60}
+              strokeWidth={1}
+            />
+            <div className="mr-auto w-[72%] text-right">
+              <p className="text-[13px] font-bold">كل خدماتك الحكومية دلوقتي</p>
+              <p className="mt-2 text-[29px] font-extrabold leading-none">في مكان واحد</p>
+              <p className="mt-3 text-[11px]">ادفع بسهولة وأمان من محفظتك</p>
+            </div>
+          </div>
         </div>
       </section>
 
