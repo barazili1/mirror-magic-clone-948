@@ -105,12 +105,14 @@ function Index() {
           </div>
           <div className="flex h-[40px] items-center rounded-full border border-primary-foreground/20 bg-primary-foreground/10 p-1">
             <Button
+              variant="ghost"
               aria-label="الإشعارات"
               className="grid size-8 place-items-center rounded-full bg-primary-foreground/10"
             >
               <Bell size={18} />
             </Button>
             <Button
+              variant="ghost"
               aria-label="الهدايا"
               className="grid size-8 place-items-center rounded-full bg-primary-foreground/10"
             >
@@ -138,18 +140,22 @@ function Index() {
             </span>
             <div className="flex items-center gap-6">
               <Button
+                variant="ghost"
                 aria-label="إظهار الرصيد"
                 onClick={() => setBalanceVisible((value) => !value)}
               >
                 <Eye size={26} />
               </Button>
               <span className="h-7 w-px bg-primary-foreground/30" />
-              <Button aria-label="مسح رمز">
+              <Button variant="ghost" aria-label="مسح رمز">
                 <ScanLine size={24} />
               </Button>
             </div>
           </div>
-          <Button className="h-[37px] w-full border-t border-primary-foreground/25 text-[14px]">
+          <Button
+            variant="ghost"
+            className="h-[37px] w-full rounded-none border-t border-primary-foreground/25 text-[14px]"
+          >
             عرض مصروفاتك
           </Button>
         </div>
@@ -157,7 +163,11 @@ function Index() {
         <div className="mt-[21px] grid grid-cols-4 gap-3" dir="rtl">
           {shortcuts.map(({ label, icon: Icon }) => (
             <div key={Icon.displayName} className="flex flex-col items-center text-center">
-              <Button variant="round" aria-label={typeof label === "string" ? label : "خدمة"}>
+              <Button
+                variant="round"
+                size="shortcut"
+                aria-label={typeof label === "string" ? label : "خدمة"}
+              >
                 <Icon size={27} strokeWidth={1.8} />
               </Button>
               <span className="mt-2 text-[13px] leading-[1.1]">{label}</span>
@@ -170,11 +180,16 @@ function Index() {
         <div className="rounded-[12px] bg-panel px-3 py-3">
           <div className="mb-3 flex items-center justify-between">
             <h1 className="text-[18px] font-extrabold">خدمات كاش</h1>
-            <Button className="rounded-full bg-muted px-3 py-1 text-[13px]">عرض الكل</Button>
+            <Button
+              variant="ghost"
+              className="h-auto rounded-full bg-muted px-3 py-1 text-[13px]"
+            >
+              عرض الكل
+            </Button>
           </div>
           <div className="hide-scrollbar flex gap-[18px] overflow-x-auto pb-1">
             {services.map(({ label, icon: Icon, tag }) => (
-              <div key={label} className="w-[64px] shrink-0 text-center">
+              <div key={label} className="w-[68px] shrink-0 text-center">
                 <div className="service-tile relative mx-auto grid size-[52px] place-items-center rounded-[12px] text-primary-foreground">
                   <Icon size={29} strokeWidth={1.8} />
                   {tag && (
@@ -183,7 +198,7 @@ function Index() {
                     </span>
                   )}
                 </div>
-                <p className="mt-2 whitespace-nowrap text-[12px]">{label}</p>
+                <p className="mt-2 whitespace-nowrap text-[10px]">{label}</p>
               </div>
             ))}
           </div>
@@ -212,6 +227,7 @@ function Index() {
       {toastVisible && (
         <div className="fixed bottom-[66px] left-1/2 z-30 flex h-[59px] w-[320px] max-w-[calc(100%-36px)] -translate-x-1/2 items-center rounded-full bg-panel px-3 shadow-xl">
           <Button
+            variant="ghost"
             aria-label="إغلاق"
             onClick={() => setToastVisible(false)}
             className="grid size-10 shrink-0 place-items-center rounded-full bg-muted"
@@ -226,15 +242,15 @@ function Index() {
         className="fixed bottom-0 left-1/2 z-20 flex h-[66px] w-full max-w-[430px] -translate-x-1/2 items-center justify-around bg-panel px-3 shadow-[0_-4px_18px_color-mix(in_oklab,var(--foreground)_8%,transparent)]"
         aria-label="التنقل الرئيسي"
       >
-        <Button variant="nav" className="bg-muted text-alert">
+        <Button variant="nav" size="nav" className="bg-muted text-alert">
           <Smartphone size={24} />
           <span className="mt-1 text-[11px] font-bold">المحفظة</span>
         </Button>
-        <Button variant="nav">
+        <Button variant="nav" size="nav">
           <ArrowLeftRight size={23} />
           <span className="mt-1 text-[11px]">تحويل أموال</span>
         </Button>
-        <Button variant="nav">
+        <Button variant="nav" size="nav">
           <Grid2X2 size={23} />
           <span className="mt-1 text-[11px]">الخدمات</span>
         </Button>
