@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bell, ChevronLeft, Gift, Grid2X2, Landmark, Smartphone, X } from "lucide-react";
+import { Bell, ChevronLeft, Gift, Smartphone, X } from "lucide-react";
 import { type SVGProps, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -87,46 +87,6 @@ function ScanIcon(props: IconProps) {
       <rect x="27" y="17" width="5" height="5" rx="1" />
       <rect x="17" y="27" width="5" height="5" rx="1" />
       <path d="M28 28h4v4h-4" />
-    </svg>
-  );
-}
-
-function GovernmentIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 48 48" {...props}>
-      <circle cx="24" cy="24" r="21" fill="var(--panel)" />
-      <circle
-        cx="24"
-        cy="24"
-        r="18"
-        fill="var(--service-badge)"
-        stroke="var(--service-emblem)"
-        strokeWidth="1.5"
-      />
-      <path d="M24 8.5 27 13h-6l3-4.5Z" fill="var(--service-emblem)" />
-      <path d="M12 18c3-5 7-8 12-8s9 3 12 8" stroke="var(--service-emblem)" strokeWidth="1.3" />
-      <path d="m24 13 11 5-11 4-11-4 11-5Z" fill="var(--panel)" />
-      <path d="M15 22h18v11H15z" fill="var(--panel)" />
-      <path d="M12 34h24v4H12z" fill="var(--panel)" />
-      <path d="M19 22v11m10-11v11" stroke="var(--service-badge)" strokeWidth="2" />
-      <path d="M14 39h20" stroke="var(--service-emblem)" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-function ElectricCardIcon(props: IconProps) {
-  return (
-    <svg {...iconDefaults} {...props}>
-      <path d="M19 9v10m10-10v10M15 19h18v8a9 9 0 0 1-9 9 9 9 0 0 1-9-9v-8Z" />
-      <path d="M24 36v7M19 25h10" />
-    </svg>
-  );
-}
-
-function FlameIcon(props: IconProps) {
-  return (
-    <svg {...iconDefaults} {...props}>
-      <path d="M26 5c3 10-5 11-2 18 1-5 5-6 6-11 8 7 11 15 7 23-3 6-8 9-14 9C13 44 7 38 8 28c1-8 6-13 11-18 0 7 2 10 7 12" />
     </svg>
   );
 }
@@ -241,8 +201,14 @@ function Index() {
 
         <div className="mt-[15px] overflow-hidden rounded-[12px] border border-primary-foreground/30 backdrop-blur-[2px]">
           <div className="flex h-[58px] items-center justify-between px-6">
-            <span className="text-[20px] font-bold">
-              {balanceVisible ? "٢,٤٥٠٫٠٠ ج.م" : "••••••••"}
+            <span
+              className={
+                balanceVisible
+                  ? "text-[20px] font-bold"
+                  : "text-[20px] font-bold blur-[7px] select-none"
+              }
+            >
+              ٢,٤٥٠٫٠٠ ج.م
             </span>
             <div className="flex items-center gap-6">
               <Button
