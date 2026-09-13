@@ -197,9 +197,9 @@ function Index() {
   return (
     <main
       dir="rtl"
-      className="mx-auto min-h-screen max-w-[430px] overflow-hidden bg-background pb-[76px] text-foreground shadow-2xl"
+      className="mx-auto h-dvh max-w-[430px] overflow-hidden bg-background pb-[66px] text-foreground shadow-2xl"
     >
-      <section className="wallet-backdrop relative h-[374px] px-[22px] pt-[18px] text-primary-foreground">
+      <section className="wallet-backdrop relative h-[325px] px-[22px] pt-[12px] text-primary-foreground">
         <div className="flex items-center justify-between">
           <div className="flex h-[40px] items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 text-[17px] font-bold">
             <ChevronLeft size={27} strokeWidth={3} />
@@ -223,7 +223,7 @@ function Index() {
           </div>
         </div>
 
-        <div className="mt-[18px] flex items-center justify-between">
+        <div className="mt-[10px] flex items-center justify-between">
           <p className="text-[18px]">
             أهلاً، <strong className="font-extrabold">هيبه</strong>
           </p>
@@ -235,8 +235,8 @@ function Index() {
           </div>
         </div>
 
-        <div className="mt-[31px] overflow-hidden rounded-[12px] border border-primary-foreground/30 backdrop-blur-[2px]">
-          <div className="flex h-[68px] items-center justify-between px-6">
+        <div className="mt-[15px] overflow-hidden rounded-[12px] border border-primary-foreground/30 backdrop-blur-[2px]">
+          <div className="flex h-[58px] items-center justify-between px-6">
             <span className="text-[20px] font-bold">
               {balanceVisible ? "٢,٤٥٠٫٠٠ ج.م" : "••••••••"}
             </span>
@@ -256,68 +256,69 @@ function Index() {
           </div>
           <Button
             variant="ghost"
-            className="h-[37px] w-full rounded-none border-t border-primary-foreground/25 text-[14px]"
+            className="h-[31px] w-full rounded-none border-t border-primary-foreground/25 text-[13px]"
           >
             عرض مصروفاتك
           </Button>
         </div>
 
-        <div className="mt-[23px] grid grid-cols-4 gap-3" dir="rtl">
+        <div className="mt-[13px] grid grid-cols-4 gap-3" dir="rtl">
           {shortcuts.map(({ label, icon: Icon }, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <Button
                 variant="round"
                 size="shortcut"
                 aria-label={typeof label === "string" ? label : "خدمة"}
+                className="size-[46px]"
               >
-                <Icon className="size-9" />
+                <Icon className="size-8" />
               </Button>
-              <span className="mt-2 text-[13px] leading-[1.1]">{label}</span>
+              <span className="mt-1 text-[12px] leading-[1.05]">{label}</span>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="relative -mt-[11px] rounded-t-[22px] bg-background px-[11px] pt-[11px]">
-        <div className="rounded-[12px] bg-panel px-3 py-3">
-          <div className="mb-3 flex items-center justify-between">
-            <h1 className="text-[18px] font-extrabold">خدمات كاش</h1>
-            <Button variant="ghost" className="h-auto rounded-full bg-muted px-3 py-1 text-[13px]">
+      <section className="relative -mt-[8px] rounded-t-[22px] bg-background px-[11px] pt-[8px]">
+        <div className="rounded-[12px] bg-panel px-3 py-2">
+          <div className="mb-1.5 flex items-center justify-between">
+            <h1 className="text-[16px] font-extrabold">خدمات كاش</h1>
+            <Button variant="ghost" className="h-auto rounded-full bg-muted px-3 py-0.5 text-[12px]">
               عرض الكل
             </Button>
           </div>
-          <div className="hide-scrollbar flex gap-[18px] overflow-x-auto pb-1">
+          <div className="hide-scrollbar flex justify-between gap-2 overflow-x-auto">
             {services.map(({ label, icon: Icon, tag }) => (
-              <div key={label} className="w-[68px] shrink-0 text-center">
-                <div className="service-tile relative mx-auto grid size-[52px] place-items-center rounded-[12px] text-primary-foreground">
-                  <Icon className="size-9" />
+              <div key={label} className="w-[62px] shrink-0 text-center">
+                <div className="service-tile relative mx-auto grid size-[45px] place-items-center rounded-[10px] text-primary-foreground">
+                  <Icon className="size-8" />
                   {tag && (
                     <span className="absolute -top-1 right-1 rounded-full bg-secondary px-1 text-[7px] font-bold text-secondary-foreground">
                       {tag}
                     </span>
                   )}
                 </div>
-                <p className="mt-2 whitespace-nowrap text-[10px]">{label}</p>
+                <p className="mt-1 whitespace-nowrap text-[9px]">{label}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-[18px] rounded-[12px] bg-panel p-3">
-          <div className="mb-2 flex items-center justify-between">
-            <h2 className="text-[17px] font-extrabold">العروض</h2>
+        <div className="mt-[7px] rounded-[12px] bg-panel p-2.5">
+          <div className="mb-1 flex items-center justify-between">
+            <h2 className="text-[15px] font-extrabold">العروض</h2>
             <div className="flex gap-1" dir="ltr">
               <span className="size-2 rounded-full bg-alert" />
               <span className="size-1.5 rounded-full bg-muted" />
             </div>
           </div>
-          <div className="relative h-[139px] overflow-hidden rounded-[10px] bg-alert px-5 py-4 text-primary-foreground">
+          <div className="relative h-[100px] overflow-hidden rounded-[10px] bg-alert px-5 py-3 text-primary-foreground">
             <div className="absolute -bottom-10 -left-5 size-40 rotate-12 rounded-[28px] border-[14px] border-primary-foreground/15" />
-            <Landmark className="absolute bottom-4 left-6 opacity-90" size={60} strokeWidth={1} />
+            <Landmark className="absolute bottom-3 left-6 opacity-90" size={48} strokeWidth={1} />
             <div className="mr-auto w-[72%] text-right">
-              <p className="text-[13px] font-bold">كل خدماتك الحكومية دلوقتي</p>
-              <p className="mt-2 text-[29px] font-extrabold leading-none">في مكان واحد</p>
-              <p className="mt-3 text-[11px]">ادفع بسهولة وأمان من محفظتك</p>
+              <p className="text-[11px] font-bold">كل خدماتك الحكومية دلوقتي</p>
+              <p className="mt-1 text-[23px] font-extrabold leading-none">في مكان واحد</p>
+              <p className="mt-2 text-[9px]">ادفع بسهولة وأمان من محفظتك</p>
             </div>
           </div>
         </div>
