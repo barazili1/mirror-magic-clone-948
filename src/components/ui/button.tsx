@@ -27,7 +27,7 @@ const buttonVariants = cva(
         "icon-sm": "size-8 rounded-md",
         shortcut: "size-[46px] rounded-full p-0",
         nav: "h-[58px] min-w-[88px] rounded-[34px] px-3 py-1",
-      }
+      },
     },
     defaultVariants: { variant: "default", size: "default" },
   },
