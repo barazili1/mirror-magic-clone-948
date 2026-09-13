@@ -261,8 +261,8 @@ function Index() {
         </div>
 
         <div className="mt-[23px] grid grid-cols-4 gap-3" dir="rtl">
-          {shortcuts.map(({ label, icon: Icon }) => (
-            <div key={Icon.displayName} className="flex flex-col items-center text-center">
+          {shortcuts.map(({ label, icon: Icon }, index) => (
+            <div key={index} className="flex flex-col items-center text-center">
               <Button
                 variant="round"
                 size="shortcut"
