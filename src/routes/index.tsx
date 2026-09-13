@@ -3,10 +3,12 @@ import { Bell, ChevronLeft, Gift, Smartphone, X } from "lucide-react";
 import { type SVGProps, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import electricIcon from "@/assets/icon-electric.png";
-import gasIcon from "@/assets/icon-gas.png";
+import electricSahlIcon from "@/assets/icon-electric-sahl.png.asset.json";
+import electricIcon from "@/assets/icon-electric.png.asset.json";
+import gasNewIcon from "@/assets/icon-gas-new.png.asset.json";
+import gasIcon from "@/assets/icon-gas.png.asset.json";
 import offerBanner from "@/assets/offer-banner.jpg";
-import prosecutionIcon from "@/assets/icon-prosecution.png";
+import prosecutionIcon from "@/assets/icon-prosecution.png.asset.json";
 
 // No head() here: the home route inherits title/description/og/twitter from
 // __root.tsx, and ships no og:image so serve-time hosting can inject the
