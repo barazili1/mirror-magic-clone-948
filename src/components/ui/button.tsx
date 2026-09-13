@@ -18,7 +18,6 @@ const buttonVariants = cva(
         round:
           "grid size-[42px] place-items-center rounded-full bg-shortcut text-shortcut-foreground shadow-sm",
         nav: "flex h-[58px] min-w-[88px] flex-col items-center justify-center rounded-[34px] bg-transparent text-nav-foreground",
-
       },
       size: {
         default: "h-9 rounded-md px-4 py-2",
@@ -28,7 +27,6 @@ const buttonVariants = cva(
         "icon-sm": "size-8 rounded-md",
         shortcut: "size-[42px] rounded-full p-0",
         nav: "h-[58px] min-w-[88px] rounded-[34px] px-3 py-1",
-
       },
     },
     defaultVariants: { variant: "default", size: "default" },

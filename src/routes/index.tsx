@@ -276,7 +276,6 @@ function Index() {
             </div>
           ))}
         </div>
-
       </section>
 
       <section className="relative -mt-[8px] rounded-t-[22px] bg-background px-[11px] pt-[8px]">
