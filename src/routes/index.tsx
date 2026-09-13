@@ -264,14 +264,14 @@ function Index() {
           <div className="hide-scrollbar flex justify-between gap-0 overflow-x-auto">
             {services.map(({ label, img }) => (
               <div key={label} className="w-[76px] shrink-0 text-center">
-                <div className="relative mx-auto size-[70px]">
+                <div className="relative mx-auto size-[60px]">
                   <img
                     src={img}
                     alt={label}
                     loading="lazy"
-                    width={70}
-                    height={70}
-                    className="size-[70px] rounded-[10px] object-cover"
+                    width={60}
+                    height={60}
+                    className="size-[60px] rounded-[10px] object-cover"
                   />
                 </div>
                 <p className="mt-1 whitespace-nowrap text-[9px]">{label}</p>
