@@ -259,20 +259,20 @@ function Index() {
               عرض الكل
             </Button>
           </div>
-          <div className="hide-scrollbar flex justify-between gap-1 overflow-x-auto">
+          <div className="hide-scrollbar flex justify-between gap-0 overflow-x-auto">
             {services.map(({ label, img, tag }) => (
-              <div key={label} className="w-[72px] shrink-0 text-center">
-                <div className="relative mx-auto size-[60px]">
+              <div key={label} className="w-[76px] shrink-0 text-center">
+                <div className="relative mx-auto size-[70px]">
                   <img
                     src={img}
                     alt={label}
                     loading="lazy"
-                    width={60}
-                    height={60}
-                    className="size-[60px] rounded-[10px] object-cover"
+                    width={70}
+                    height={70}
+                    className="size-[70px] rounded-[10px] object-cover"
                   />
                   {tag && (
-                    <span className="absolute -top-1 right-1 rounded-full bg-secondary px-1 text-[7px] font-bold text-secondary-foreground">
+                    <span className="absolute top-0 right-0 z-10 rounded-full bg-secondary px-1.5 py-0.5 text-[8px] font-bold text-secondary-foreground shadow-sm">
                       {tag}
                     </span>
                   )}
