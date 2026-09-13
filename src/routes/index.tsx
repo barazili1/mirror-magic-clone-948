@@ -102,7 +102,7 @@ function GovernmentIcon(props: IconProps) {
       <path d="M24 8.5 27 13h-6l3-4.5Z" fill="var(--service-emblem)" />
       <path d="M12 18c3-5 7-8 12-8s9 3 12 8" stroke="var(--service-emblem)" strokeWidth="1.3" />
       <path d="m24 13 11 5-11 4-11-4 11-5Z" fill="var(--panel)" />
-      <path d="M15 22h18v11H15z" fill="var(--panel))" />
+      <path d="M15 22h18v11H15z" fill="var(--panel)" />
       <path d="M12 34h24v4H12z" fill="var(--panel)" />
       <path d="M19 22v11m10-11v11" stroke="var(--service-badge)" strokeWidth="2" />
       <path d="M14 39h20" stroke="var(--service-emblem)" strokeWidth="1.5" />
