@@ -1,12 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Bell,
-  ChevronLeft,
-  Gift,
-  Grid2X2,
-  Smartphone,
-  X,
-} from "lucide-react";
+import { Bell, ChevronLeft, Gift, Grid2X2, Smartphone, X } from "lucide-react";
 import { type SVGProps, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -244,11 +237,11 @@ function Index() {
                 aria-label="إظهار الرصيد"
                 onClick={() => setBalanceVisible((value) => !value)}
               >
-                 <EyeIcon className="size-8" />
+                <EyeIcon className="size-8" />
               </Button>
               <span className="h-7 w-px bg-primary-foreground/30" />
               <Button variant="ghost" aria-label="مسح رمز">
-                 <ScanIcon className="size-8" />
+                <ScanIcon className="size-8" />
               </Button>
             </div>
           </div>
@@ -268,7 +261,7 @@ function Index() {
                 size="shortcut"
                 aria-label={typeof label === "string" ? label : "خدمة"}
               >
-                 <Icon className="size-9" />
+                <Icon className="size-9" />
               </Button>
               <span className="mt-2 text-[13px] leading-[1.1]">{label}</span>
             </div>
@@ -287,8 +280,8 @@ function Index() {
           <div className="hide-scrollbar flex gap-[18px] overflow-x-auto pb-1">
             {services.map(({ label, icon: Icon, tag }) => (
               <div key={label} className="w-[68px] shrink-0 text-center">
-                 <div className="service-tile relative mx-auto grid size-[52px] place-items-center rounded-[12px] text-primary-foreground">
-                   <Icon className="size-9" />
+                <div className="service-tile relative mx-auto grid size-[52px] place-items-center rounded-[12px] text-primary-foreground">
+                  <Icon className="size-9" />
                   {tag && (
                     <span className="absolute -top-1 right-1 rounded-full bg-secondary px-1 text-[7px] font-bold text-secondary-foreground">
                       {tag}
@@ -309,11 +302,11 @@ function Index() {
               <span className="size-1.5 rounded-full bg-muted" />
             </div>
           </div>
-           <img
-             src={offerAsset.url}
-             alt="خدمات النيابة العامة في مكان واحد"
-             className="h-[139px] w-full rounded-[10px] object-cover"
-           />
+          <img
+            src={offerAsset.url}
+            alt="خدمات النيابة العامة في مكان واحد"
+            className="h-[139px] w-full rounded-[10px] object-cover"
+          />
         </div>
       </section>
 
@@ -340,11 +333,11 @@ function Index() {
           <span className="mt-1 text-[11px] font-bold">المحفظة</span>
         </Button>
         <Button variant="nav" size="nav">
-           <TransferIcon className="size-7" />
+          <TransferIcon className="size-7" />
           <span className="mt-1 text-[11px]">تحويل أموال</span>
         </Button>
         <Button variant="nav" size="nav">
-           <ServicesIcon className="size-7" />
+          <ServicesIcon className="size-7" />
           <span className="mt-1 text-[11px]">الخدمات</span>
         </Button>
       </nav>
