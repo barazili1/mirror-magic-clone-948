@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Perfect Copy
+
+اعملي نفس التصميم ونفس الالوان ونفس الايقونز ونفس كل حاجه بنفس الابعاد ونفس الطول والعرض ونفس كل حاجه خدها كوبي بست
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://mirror-magic-clone-948.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/28bc5ecd-7517-4f87-9d63-2f9816556eb4).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
