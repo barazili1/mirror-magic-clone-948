@@ -294,10 +294,17 @@ function Index() {
             </Button>
           </div>
           <div className="hide-scrollbar flex justify-between gap-2 overflow-x-auto">
-            {services.map(({ label, icon: Icon, tag }) => (
+            {services.map(({ label, img, tag }) => (
               <div key={label} className="w-[62px] shrink-0 text-center">
-                <div className="service-tile relative mx-auto grid size-[45px] place-items-center rounded-[10px] text-primary-foreground">
-                  <Icon className="size-8" />
+                <div className="relative mx-auto size-[45px]">
+                  <img
+                    src={img}
+                    alt={label}
+                    loading="lazy"
+                    width={45}
+                    height={45}
+                    className="size-[45px] rounded-[10px] object-cover"
+                  />
                   {tag && (
                     <span className="absolute -top-1 right-1 rounded-full bg-secondary px-1 text-[7px] font-bold text-secondary-foreground">
                       {tag}
@@ -318,15 +325,13 @@ function Index() {
               <span className="size-1.5 rounded-full bg-muted" />
             </div>
           </div>
-          <div className="relative h-[100px] overflow-hidden rounded-[10px] bg-alert px-5 py-3 text-primary-foreground">
-            <div className="absolute -bottom-10 -left-5 size-40 rotate-12 rounded-[28px] border-[14px] border-primary-foreground/15" />
-            <Landmark className="absolute bottom-3 left-6 opacity-90" size={48} strokeWidth={1} />
-            <div className="mr-auto w-[72%] text-right">
-              <p className="text-[11px] font-bold">كل خدماتك الحكومية دلوقتي</p>
-              <p className="mt-1 text-[23px] font-extrabold leading-none">في مكان واحد</p>
-              <p className="mt-2 text-[9px]">ادفع بسهولة وأمان من محفظتك</p>
-            </div>
-          </div>
+          <img
+            src={offerBanner}
+            alt="خدمات النيابة العامة دلوقتي في مكان واحد"
+            width={1280}
+            height={512}
+            className="h-[100px] w-full rounded-[10px] object-cover"
+          />
         </div>
       </section>
 
