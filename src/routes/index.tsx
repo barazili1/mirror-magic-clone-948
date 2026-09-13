@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bell, ChevronLeft, Gift, Grid2X2, Landmark, Smartphone, X } from "lucide-react";
+import { Bell, ChevronLeft, Gift, Smartphone, X } from "lucide-react";
 import { type SVGProps, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import electricIcon from "@/assets/icon-electric.png";
+import gasIcon from "@/assets/icon-gas.png";
+import offerBanner from "@/assets/offer-banner.jpg";
+import prosecutionIcon from "@/assets/icon-prosecution.png";
 
 // No head() here: the home route inherits title/description/og/twitter from
 // __root.tsx, and ships no og:image so serve-time hosting can inject the
@@ -87,46 +91,6 @@ function ScanIcon(props: IconProps) {
   );
 }
 
-function GovernmentIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 48 48" {...props}>
-      <circle cx="24" cy="24" r="21" fill="var(--panel)" />
-      <circle
-        cx="24"
-        cy="24"
-        r="18"
-        fill="var(--service-badge)"
-        stroke="var(--service-emblem)"
-        strokeWidth="1.5"
-      />
-      <path d="M24 8.5 27 13h-6l3-4.5Z" fill="var(--service-emblem)" />
-      <path d="M12 18c3-5 7-8 12-8s9 3 12 8" stroke="var(--service-emblem)" strokeWidth="1.3" />
-      <path d="m24 13 11 5-11 4-11-4 11-5Z" fill="var(--panel)" />
-      <path d="M15 22h18v11H15z" fill="var(--panel)" />
-      <path d="M12 34h24v4H12z" fill="var(--panel)" />
-      <path d="M19 22v11m10-11v11" stroke="var(--service-badge)" strokeWidth="2" />
-      <path d="M14 39h20" stroke="var(--service-emblem)" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-function ElectricCardIcon(props: IconProps) {
-  return (
-    <svg {...iconDefaults} {...props}>
-      <path d="M19 9v10m10-10v10M15 19h18v8a9 9 0 0 1-9 9 9 9 0 0 1-9-9v-8Z" />
-      <path d="M24 36v7M19 25h10" />
-    </svg>
-  );
-}
-
-function FlameIcon(props: IconProps) {
-  return (
-    <svg {...iconDefaults} {...props}>
-      <path d="M26 5c3 10-5 11-2 18 1-5 5-6 6-11 8 7 11 15 7 23-3 6-8 9-14 9C13 44 7 38 8 28c1-8 6-13 11-18 0 7 2 10 7 12" />
-    </svg>
-  );
-}
-
 function ServicesIcon(props: IconProps) {
   return (
     <svg {...iconDefaults} {...props}>
@@ -183,11 +147,11 @@ const shortcuts = [
 ];
 
 const services = [
-  { label: "النيابة العامة", icon: GovernmentIcon },
-  { label: "كارت الكهرباء", icon: ElectricCardIcon, tag: "سهل" },
-  { label: "كارت الغاز", icon: FlameIcon, tag: "NEW" },
-  { label: "كهرباء", icon: ElectricCardIcon },
-  { label: "غاز", icon: FlameIcon },
+  { label: "النيابة العامة", img: prosecutionIcon },
+  { label: "كارت الكهرباء", img: electricIcon, tag: "سهل" },
+  { label: "كارت الغاز", img: gasIcon, tag: "NEW" },
+  { label: "كهرباء", img: electricIcon },
+  { label: "غاز", img: gasIcon },
 ];
 
 function Index() {
@@ -237,8 +201,14 @@ function Index() {
 
         <div className="mt-[15px] overflow-hidden rounded-[12px] border border-primary-foreground/30 backdrop-blur-[2px]">
           <div className="flex h-[58px] items-center justify-between px-6">
-            <span className="text-[20px] font-bold">
-              {balanceVisible ? "٢,٤٥٠٫٠٠ ج.م" : "••••••••"}
+            <span
+              className={
+                balanceVisible
+                  ? "text-[20px] font-bold"
+                  : "text-[20px] font-bold blur-[7px] select-none"
+              }
+            >
+              ٢,٤٥٠٫٠٠ ج.م
             </span>
             <div className="flex items-center gap-6">
               <Button
@@ -290,10 +260,17 @@ function Index() {
             </Button>
           </div>
           <div className="hide-scrollbar flex justify-between gap-2 overflow-x-auto">
-            {services.map(({ label, icon: Icon, tag }) => (
+            {services.map(({ label, img, tag }) => (
               <div key={label} className="w-[62px] shrink-0 text-center">
-                <div className="service-tile relative mx-auto grid size-[45px] place-items-center rounded-[10px] text-primary-foreground">
-                  <Icon className="size-8" />
+                <div className="relative mx-auto size-[45px]">
+                  <img
+                    src={img}
+                    alt={label}
+                    loading="lazy"
+                    width={45}
+                    height={45}
+                    className="size-[45px] rounded-[10px] object-cover"
+                  />
                   {tag && (
                     <span className="absolute -top-1 right-1 rounded-full bg-secondary px-1 text-[7px] font-bold text-secondary-foreground">
                       {tag}
@@ -314,15 +291,13 @@ function Index() {
               <span className="size-1.5 rounded-full bg-muted" />
             </div>
           </div>
-          <div className="relative h-[100px] overflow-hidden rounded-[10px] bg-alert px-5 py-3 text-primary-foreground">
-            <div className="absolute -bottom-10 -left-5 size-40 rotate-12 rounded-[28px] border-[14px] border-primary-foreground/15" />
-            <Landmark className="absolute bottom-3 left-6 opacity-90" size={48} strokeWidth={1} />
-            <div className="mr-auto w-[72%] text-right">
-              <p className="text-[11px] font-bold">كل خدماتك الحكومية دلوقتي</p>
-              <p className="mt-1 text-[23px] font-extrabold leading-none">في مكان واحد</p>
-              <p className="mt-2 text-[9px]">ادفع بسهولة وأمان من محفظتك</p>
-            </div>
-          </div>
+          <img
+            src={offerBanner}
+            alt="خدمات النيابة العامة دلوقتي في مكان واحد"
+            width={1280}
+            height={512}
+            className="h-[100px] w-full rounded-[10px] object-cover"
+          />
         </div>
       </section>
 
