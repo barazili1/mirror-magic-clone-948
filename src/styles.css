@@ -169,8 +169,16 @@
 
 @utility wallet-backdrop {
   background:
-    radial-gradient(circle at 22% 85%, color-mix(in oklab, var(--wallet-glow) 80%, transparent), transparent 32%),
-    radial-gradient(circle at 88% 52%, color-mix(in oklab, var(--wallet-glow) 65%, transparent), transparent 35%),
+    radial-gradient(
+      circle at 22% 85%,
+      color-mix(in oklab, var(--wallet-glow) 80%, transparent),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 88% 52%,
+      color-mix(in oklab, var(--wallet-glow) 65%, transparent),
+      transparent 35%
+    ),
     linear-gradient(165deg, var(--wallet-deep) 4%, var(--wallet) 58%, var(--wallet-deep));
 }
 
@@ -180,5 +188,7 @@
 
 @utility hide-scrollbar {
   scrollbar-width: none;
-  &::-webkit-scrollbar { display: none; }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
