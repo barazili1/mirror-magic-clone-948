@@ -16,7 +16,7 @@ const buttonVariants = cva(
         ghost: "bg-transparent text-current hover:bg-accent/30",
         link: "text-primary underline-offset-4 hover:underline",
         round:
-          "grid size-[52px] place-items-center rounded-full bg-shortcut text-shortcut-foreground shadow-sm",
+          "grid size-[42px] place-items-center rounded-full bg-shortcut text-shortcut-foreground shadow-sm",
         nav: "flex h-[58px] min-w-[88px] flex-col items-center justify-center rounded-[34px] bg-transparent text-nav-foreground",
       },
       size: {
@@ -25,7 +25,7 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6",
         icon: "size-9 rounded-md",
         "icon-sm": "size-8 rounded-md",
-        shortcut: "size-[52px] rounded-full p-0",
+        shortcut: "size-[42px] rounded-full p-0",
         nav: "h-[58px] min-w-[88px] rounded-[34px] px-3 py-1",
       },
     },
