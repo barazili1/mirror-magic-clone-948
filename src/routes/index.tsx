@@ -149,11 +149,11 @@ const shortcuts = [
 ];
 
 const services = [
-  { label: "النيابة العامة", img: prosecutionIcon },
-  { label: "كارت الكهرباء", img: electricIcon, tag: "سهل" },
-  { label: "كارت الغاز", img: gasIcon, tag: "NEW" },
-  { label: "كهرباء", img: electricIcon },
-  { label: "غاز", img: gasIcon },
+  { label: "النيابة العامة", img: prosecutionIcon.url },
+  { label: "كارت الكهرباء", img: electricSahlIcon.url },
+  { label: "كارت الغاز", img: gasNewIcon.url },
+  { label: "كهرباء", img: electricIcon.url },
+  { label: "غاز", img: gasIcon.url },
 ];
 
 function Index() {
