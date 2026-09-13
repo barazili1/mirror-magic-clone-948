@@ -296,7 +296,7 @@ function Index() {
             alt="خدمات النيابة العامة دلوقتي في مكان واحد"
             width={1280}
             height={512}
-            className="h-[100px] w-full rounded-[10px] object-cover"
+            className="h-[120px] w-full rounded-[10px] object-cover"
           />
         </div>
       </section>
