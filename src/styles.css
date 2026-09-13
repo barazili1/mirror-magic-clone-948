@@ -68,6 +68,7 @@
   --color-shortcut-foreground: var(--shortcut-foreground);
   --color-service: var(--service);
   --color-service-deep: var(--service-deep);
+  --color-service-badge: var(--service-badge);
   --color-nav-foreground: var(--nav-foreground);
   --color-alert: var(--alert);
 }
@@ -114,6 +115,7 @@
   --shortcut-foreground: oklch(0.18 0 0);
   --service: oklch(0.65 0.14 223);
   --service-deep: oklch(0.49 0.15 242);
+  --service-badge: oklch(0.38 0.12 28);
   --nav-foreground: oklch(0.18 0.01 260);
   --alert: oklch(0.63 0.25 27);
 }
@@ -170,16 +172,21 @@
 @utility wallet-backdrop {
   background:
     radial-gradient(
-      circle at 22% 85%,
-      color-mix(in oklab, var(--wallet-glow) 80%, transparent),
-      transparent 32%
+      ellipse 30% 20% at 67% 49%,
+      color-mix(in oklab, var(--primary-foreground) 38%, transparent),
+      transparent 72%
     ),
     radial-gradient(
-      circle at 88% 52%,
-      color-mix(in oklab, var(--wallet-glow) 65%, transparent),
+      ellipse 24% 16% at 82% 47%,
+      color-mix(in oklab, var(--primary-foreground) 25%, transparent),
+      transparent 74%
+    ),
+    radial-gradient(
+      circle at 17% 86%,
+      color-mix(in oklab, var(--wallet-glow) 74%, transparent),
       transparent 35%
     ),
-    linear-gradient(165deg, var(--wallet-deep) 4%, var(--wallet) 58%, var(--wallet-deep));
+    linear-gradient(165deg, var(--wallet-deep) 2%, var(--wallet) 61%, var(--wallet-deep));
 }
 
 @utility service-tile {
