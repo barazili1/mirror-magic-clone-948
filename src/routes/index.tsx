@@ -163,7 +163,7 @@ function Index() {
       dir="rtl"
       className="mx-auto h-dvh max-w-[430px] overflow-hidden bg-background pb-[66px] text-foreground shadow-2xl"
     >
-      <section className="wallet-backdrop relative h-[325px] px-[22px] pt-[12px] text-primary-foreground">
+      <section className="wallet-backdrop relative h-[310px] px-[22px] pt-[12px] text-primary-foreground">
         <div className="flex items-center justify-between">
           <div className="flex h-[40px] items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 text-[17px] font-bold">
             <ChevronLeft size={27} strokeWidth={3} />
@@ -199,7 +199,7 @@ function Index() {
           </div>
         </div>
 
-        <div className="mt-[15px] overflow-hidden rounded-[12px] border border-primary-foreground/30 backdrop-blur-[2px]">
+        <div className="mt-[10px] overflow-hidden rounded-[12px] border border-primary-foreground/30 backdrop-blur-[2px]">
           <div className="flex h-[58px] items-center justify-between px-6">
             <span
               className={
@@ -232,7 +232,7 @@ function Index() {
           </Button>
         </div>
 
-        <div className="mt-[13px] grid grid-cols-4 gap-1" dir="rtl">
+        <div className="mt-[11px] grid grid-cols-4 gap-0" dir="rtl">
           {shortcuts.map(({ label, icon: Icon }, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <Button
@@ -240,7 +240,7 @@ function Index() {
                 size="shortcut"
                 aria-label={typeof label === "string" ? label : "خدمة"}
               >
-                <Icon className="size-7" />
+                <Icon className="size-8" />
               </Button>
               <span className="mt-1 text-[11px] leading-[1.05]">{label}</span>
             </div>
