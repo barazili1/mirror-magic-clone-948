@@ -3,10 +3,12 @@ import { Bell, ChevronLeft, Gift, Smartphone, X } from "lucide-react";
 import { type SVGProps, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import electricIcon from "@/assets/icon-electric.png";
-import gasIcon from "@/assets/icon-gas.png";
+import electricSahlIcon from "@/assets/icon-electric-sahl.png.asset.json";
+import electricIcon from "@/assets/icon-electric.png.asset.json";
+import gasNewIcon from "@/assets/icon-gas-new.png.asset.json";
+import gasIcon from "@/assets/icon-gas.png.asset.json";
 import offerBanner from "@/assets/offer-banner.jpg";
-import prosecutionIcon from "@/assets/icon-prosecution.png";
+import prosecutionIcon from "@/assets/icon-prosecution.png.asset.json";
 
 // No head() here: the home route inherits title/description/og/twitter from
 // __root.tsx, and ships no og:image so serve-time hosting can inject the
@@ -147,11 +149,11 @@ const shortcuts = [
 ];
 
 const services = [
-  { label: "النيابة العامة", img: prosecutionIcon },
-  { label: "كارت الكهرباء", img: electricIcon, tag: "سهل" },
-  { label: "كارت الغاز", img: gasIcon, tag: "NEW" },
-  { label: "كهرباء", img: electricIcon },
-  { label: "غاز", img: gasIcon },
+  { label: "النيابة العامة", img: prosecutionIcon.url },
+  { label: "كارت الكهرباء", img: electricSahlIcon.url },
+  { label: "كارت الغاز", img: gasNewIcon.url },
+  { label: "كهرباء", img: electricIcon.url },
+  { label: "غاز", img: gasIcon.url },
 ];
 
 function Index() {
@@ -260,7 +262,7 @@ function Index() {
             </Button>
           </div>
           <div className="hide-scrollbar flex justify-between gap-0 overflow-x-auto">
-            {services.map(({ label, img, tag }) => (
+            {services.map(({ label, img }) => (
               <div key={label} className="w-[76px] shrink-0 text-center">
                 <div className="relative mx-auto size-[70px]">
                   <img
@@ -271,11 +273,6 @@ function Index() {
                     height={70}
                     className="size-[70px] rounded-[10px] object-cover"
                   />
-                  {tag && (
-                    <span className="absolute top-0 right-0 z-10 rounded-full bg-secondary px-1.5 py-0.5 text-[8px] font-bold text-secondary-foreground shadow-sm">
-                      {tag}
-                    </span>
-                  )}
                 </div>
                 <p className="mt-1 whitespace-nowrap text-[9px]">{label}</p>
               </div>
