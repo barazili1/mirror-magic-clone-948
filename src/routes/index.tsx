@@ -261,15 +261,15 @@ function Index() {
           </div>
           <div className="hide-scrollbar flex justify-between gap-2 overflow-x-auto">
             {services.map(({ label, img, tag }) => (
-              <div key={label} className="w-[62px] shrink-0 text-center">
-                <div className="relative mx-auto size-[45px]">
+              <div key={label} className="w-[68px] shrink-0 text-center">
+                <div className="relative mx-auto size-[50px]">
                   <img
                     src={img}
                     alt={label}
                     loading="lazy"
-                    width={45}
-                    height={45}
-                    className="size-[45px] rounded-[10px] object-cover"
+                    width={50}
+                    height={50}
+                    className="size-[50px] rounded-[10px] object-cover"
                   />
                   {tag && (
                     <span className="absolute -top-1 right-1 rounded-full bg-secondary px-1 text-[7px] font-bold text-secondary-foreground">
