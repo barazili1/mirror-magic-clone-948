@@ -3,6 +3,10 @@ import { Bell, ChevronLeft, Gift, Grid2X2, Landmark, Smartphone, X } from "lucid
 import { type SVGProps, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import electricIcon from "@/assets/icon-electric.png";
+import gasIcon from "@/assets/icon-gas.png";
+import offerBanner from "@/assets/offer-banner.jpg";
+import prosecutionIcon from "@/assets/icon-prosecution.png";
 
 // No head() here: the home route inherits title/description/og/twitter from
 // __root.tsx, and ships no og:image so serve-time hosting can inject the
@@ -183,11 +187,11 @@ const shortcuts = [
 ];
 
 const services = [
-  { label: "النيابة العامة", icon: GovernmentIcon },
-  { label: "كارت الكهرباء", icon: ElectricCardIcon, tag: "سهل" },
-  { label: "كارت الغاز", icon: FlameIcon, tag: "NEW" },
-  { label: "كهرباء", icon: ElectricCardIcon },
-  { label: "غاز", icon: FlameIcon },
+  { label: "النيابة العامة", img: prosecutionIcon },
+  { label: "كارت الكهرباء", img: electricIcon, tag: "سهل" },
+  { label: "كارت الغاز", img: gasIcon, tag: "NEW" },
+  { label: "كهرباء", img: electricIcon },
+  { label: "غاز", img: gasIcon },
 ];
 
 function Index() {
