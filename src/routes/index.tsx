@@ -262,21 +262,21 @@ function Index() {
           </Button>
         </div>
 
-        <div className="mt-[13px] grid grid-cols-4 gap-3" dir="rtl">
+        <div className="mt-[13px] grid grid-cols-4 gap-1" dir="rtl">
           {shortcuts.map(({ label, icon: Icon }, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <Button
                 variant="round"
                 size="shortcut"
                 aria-label={typeof label === "string" ? label : "خدمة"}
-                className="size-[46px]"
               >
-                <Icon className="size-8" />
+                <Icon className="size-7" />
               </Button>
-              <span className="mt-1 text-[12px] leading-[1.05]">{label}</span>
+              <span className="mt-1 text-[11px] leading-[1.05]">{label}</span>
             </div>
           ))}
         </div>
+
       </section>
 
       <section className="relative -mt-[8px] rounded-t-[22px] bg-background px-[11px] pt-[8px]">
