@@ -16,8 +16,9 @@ const buttonVariants = cva(
         ghost: "bg-transparent text-current hover:bg-accent/30",
         link: "text-primary underline-offset-4 hover:underline",
         round:
-          "grid size-[52px] place-items-center rounded-full bg-shortcut text-shortcut-foreground shadow-sm",
+          "grid size-[42px] place-items-center rounded-full bg-shortcut text-shortcut-foreground shadow-sm",
         nav: "flex h-[58px] min-w-[88px] flex-col items-center justify-center rounded-[34px] bg-transparent text-nav-foreground",
+
       },
       size: {
         default: "h-9 rounded-md px-4 py-2",
