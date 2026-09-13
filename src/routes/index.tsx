@@ -313,11 +313,7 @@ function Index() {
           </div>
           <div className="relative h-[139px] overflow-hidden rounded-[10px] bg-alert px-5 py-4 text-primary-foreground">
             <div className="absolute -bottom-10 -left-5 size-40 rotate-12 rounded-[28px] border-[14px] border-primary-foreground/15" />
-            <Landmark
-              className="absolute bottom-4 left-6 opacity-90"
-              size={60}
-              strokeWidth={1}
-            />
+            <Landmark className="absolute bottom-4 left-6 opacity-90" size={60} strokeWidth={1} />
             <div className="mr-auto w-[72%] text-right">
               <p className="text-[13px] font-bold">كل خدماتك الحكومية دلوقتي</p>
               <p className="mt-2 text-[29px] font-extrabold leading-none">في مكان واحد</p>
